@@ -1,3 +1,5 @@
-const HomePage = () => <main>Home</main>
+import BannerSection from '../../templates/Banner'
+
+const HomePage = () => <BannerSection />
 
 export default HomePage
