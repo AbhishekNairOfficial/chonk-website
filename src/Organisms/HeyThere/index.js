@@ -12,7 +12,6 @@ const Container = styled(PaddedContainer)`
 
 const StyledSectionTitle = styled(SectionTitle)`
 	flex: 1;
-	margin: 0 10vw 0 0;
 `
 
 const Content = styled.div`
