@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import PaddedContainer from '../../atoms/PaddedContainer'
+import SubtitleText from '../../atoms/SubTitleText'
 import WrittenTextComponent from '../../atoms/WrittenText'
-import { title, subtitle } from '../../content/index.json'
+import { title } from '../../content/index.json'
 import SCROLL_IMAGE from '../../images/scroll-logo.png'
 
 const Container = styled(PaddedContainer)`
@@ -23,13 +24,6 @@ const TitleText = styled.h1`
 	text-align: left;
 `
 
-const SubTitleText = styled.h2`
-	font-family: ${(p) => p.theme.fonts.secondary};
-	font-size: 1.5em;
-	line-height: 1.25;
-	color: ${(p) => p.theme.palette.black};
-	margin: 0;
-`
 const ScrollImage = styled.img`
 	height: 40px;
 	width: 40px;
@@ -51,7 +45,7 @@ const BannerSection = () => (
 	<Container>
 		<div>
 			<TitleText>{title}</TitleText>
-			<SubTitleText>{subtitle}</SubTitleText>
+			<SubtitleText />
 		</div>
 		<WrittenTextComponent />
 		<ScrollImage src={SCROLL_IMAGE} alt='scroll' />
