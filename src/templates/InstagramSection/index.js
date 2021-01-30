@@ -13,7 +13,18 @@ const Section = styled(PaddedContainer)`
 	}
 `
 
-const InstagramId = styled.a``
+const InstagramId = styled.a`
+	padding: 10px;
+	border-radius: 6px;
+	border: ${(p) => `solid 1px ${p.theme.palette.primary}`};
+	background-color: ${(p) => p.theme.palette.secondary};
+	color: ${(p) => p.theme.palette.white};
+	margin-top: 50px;
+	font-size: 1.2em;
+	font-weight: 500;
+	display: inline-block;
+	cursor: pointer;
+`
 
 const InstagramSection = () => {
 	return (
