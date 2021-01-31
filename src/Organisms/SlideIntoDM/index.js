@@ -20,6 +20,17 @@ const Container = styled.div`
 		margin: 15px 0;
 		margin-right: 50px;
 	}
+	@media (max-width: 480px) {
+		width: 100vw;
+		margin-left: -30px;
+		padding-left: 30px;
+		border-top-right-radius: 0;
+		& > input,
+		& > textarea,
+		& > * {
+			margin-right: 30px;
+		}
+	}
 `
 
 const SlideIntoDm = () => {
