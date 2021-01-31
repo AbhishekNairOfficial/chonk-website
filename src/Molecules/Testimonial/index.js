@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 const Container = styled.article`
+	flex: 1;
 	padding: 25px;
-	padding-right: 8vw;
 	border-radius: 6px;
 	white-space: pre-wrap;
 	-webkit-backdrop-filter: blur(15px);

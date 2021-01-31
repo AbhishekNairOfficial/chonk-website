@@ -11,6 +11,7 @@ const Title = styled.p`
 	line-height: 1.25;
 	letter-spacing: normal;
 	text-align: left;
+	margin: 0;
 	margin-bottom: 30px;
 	color: ${(p) => p.theme.palette.black};
 `
@@ -19,8 +20,8 @@ const TestimonialContainer = styled.div`
 	position: relative;
 	display: grid;
 	grid-gap: 25px;
-	grid-template-columns: auto auto;
-	grid-template-rows: auto auto;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 50% 50%;
 `
 
 const Circle = styled.div`
