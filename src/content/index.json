@@ -9,5 +9,23 @@
 	"instagramUrl": "https://www.instagram.com/ofwheelsandwords/?__a=1",
 	"dmTitle": "Slide into my DMs here ;)",
 	"friendsTitle": "Here’s what some of my friends say",
+	"testimonials": [
+		{
+			"name": "Giri",
+			"body": "Haha lol.\nBewarsi Kudka.\nHappy birthday Bro!"
+		},
+		{
+			"name": "Giri",
+			"body": "Haha lol.\nBewarsi Kudka.\nHappy birthday Bro!"
+		},
+		{
+			"name": "Giri",
+			"body": "Haha lol.\nBewarsi Kudka.\nHappy birthday Bro!"
+		},
+		{
+			"name": "Giri",
+			"body": "Haha lol.\nBewarsi Kudka.\nHappy birthday Bro!"
+		}
+	],
 	"footerText": "Made with ❤️  by Tallboi"
 }
