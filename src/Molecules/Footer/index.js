@@ -12,6 +12,9 @@ const Text = styled.a`
 	color: ${(p) => p.theme.palette.white};
 	text-align: right;
 	display: block;
+	@media (max-width: 480px) {
+		text-align: center;
+	}
 `
 
 const Footer = () => (
