@@ -7,5 +7,9 @@ const SectionTitle = styled.p`
 	margin: 0;
 	max-width: 30vw;
 	color: ${(p) => (p.dark ? p.theme.palette.black : p.theme.palette.white)};
+	@media (max-width: 480px) {
+		font-size: 2.5em;
+		max-width: 80vw;
+	}
 `
 export default SectionTitle

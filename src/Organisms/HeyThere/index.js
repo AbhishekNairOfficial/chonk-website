@@ -8,11 +8,17 @@ const Container = styled(PaddedContainer)`
 	padding-top: 50px;
 	padding-bottom: 50px;
 	display: flex;
+	@media (max-width: 480px) {
+		flex-direction: column;
+	}
 `
 
 const StyledSectionTitle = styled(SectionTitle)`
 	flex: 1;
 	white-space: pre-wrap;
+	@media (max-width: 480px) {
+		white-space: nowrap;
+	}
 `
 
 const Content = styled.div`
@@ -22,6 +28,10 @@ const Content = styled.div`
 	letter-spacing: normal;
 	text-align: left;
 	color: ${(p) => p.theme.palette.white};
+	@media (max-width: 480px) {
+		line-height: 1.5;
+		margin-top: 50px;
+	}
 `
 
 const HeyThere = () => (
