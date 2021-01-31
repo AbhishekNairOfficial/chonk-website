@@ -10,6 +10,9 @@ const Text = styled.h2`
 	color: ${(p) => p.theme.palette.black};
 	margin: 0;
 	display: inline;
+	@media (max-width: 480px) {
+		font-size: 1.2em;
+	}
 `
 
 const Wrapper = styled.div`
@@ -21,12 +24,17 @@ const Wrapper = styled.div`
 const Circle = styled.div`
 	height: 5em;
 	width: 5em;
-	border-radius: 40px;
+	border-radius: 5em;
 	background-color: ${(p) => p.theme.palette.primary};
 	position: absolute;
 	right: 0;
 	top: -2em;
 	z-index: -1;
+	@media (max-width: 480px) {
+		height: 4em;
+		width: 4em;
+		top: -1.5em;
+	}
 `
 
 const SubtitleText = () => (

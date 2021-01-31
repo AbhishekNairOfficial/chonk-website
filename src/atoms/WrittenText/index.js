@@ -9,6 +9,9 @@ const WrittenText = styled.div`
 	color: ${(p) => p.theme.palette.black};
 	text-align: left;
 	white-space: pre-wrap;
+	@media (max-width: 480px) {
+		font-size: 2.5em;
+	}
 `
 
 const WrittenTextComponent = () => {

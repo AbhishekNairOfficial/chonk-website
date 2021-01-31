@@ -13,6 +13,9 @@ const Container = styled(PaddedContainer)`
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+	@media (max-width: 480px) {
+		padding-top: 50px;
+	}
 `
 
 const TitleText = styled.h1`
@@ -22,6 +25,12 @@ const TitleText = styled.h1`
 	line-height: 1.33;
 	margin: 0;
 	text-align: left;
+	@media (max-width: 480px) {
+		font-size: 3.5em;
+		/* To prevent full name in one line */
+		max-width: 80vw;
+		margin-bottom: 15px;
+	}
 `
 
 const ScrollImage = styled.img`
