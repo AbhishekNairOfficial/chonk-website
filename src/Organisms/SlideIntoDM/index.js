@@ -9,8 +9,8 @@ const Container = styled.div`
 	background-color: ${(p) => p.theme.palette.secondary};
 	flex: 1;
 	padding: 50px 0px;
-	padding-left: 100px;
-	margin-left: -100px;
+	padding-left: 10vw;
+	margin-left: -10vw;
 	display: flex;
 	flex-direction: column;
 	border-top-right-radius: 50px;

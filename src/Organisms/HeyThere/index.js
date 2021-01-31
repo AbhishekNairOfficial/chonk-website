@@ -12,6 +12,7 @@ const Container = styled(PaddedContainer)`
 
 const StyledSectionTitle = styled(SectionTitle)`
 	flex: 1;
+	white-space: pre-wrap;
 `
 
 const Content = styled.div`
