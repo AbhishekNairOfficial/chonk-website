@@ -14,6 +14,9 @@ const Container = styled.article`
 		rgba(255, 255, 255, 0.4),
 		rgba(255, 255, 255, 0.1) 70%
 	);
+	@media (max-width: 480px) {
+		width: 70vw;
+	}
 `
 
 const NameText = styled.div`

@@ -6,6 +6,9 @@ import SlideIntoDm from '../../Organisms/SlideIntoDM'
 const StyledPaddedContainer = styled(PaddedContainer)`
 	padding-top: 50px;
 	display: flex;
+	@media (max-width: 480px) {
+		flex-direction: column-reverse;
+	}
 `
 
 const MessagesSection = () => (

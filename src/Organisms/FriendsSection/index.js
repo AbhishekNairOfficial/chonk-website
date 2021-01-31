@@ -5,6 +5,10 @@ import Testmonial from '../../Molecules/Testimonial'
 const Container = styled.div`
 	flex: 2;
 	padding: 50px 0 0 50px;
+	@media (max-width: 480px) {
+		padding: 0;
+		position: relative;
+	}
 `
 const Title = styled.p`
 	font-size: 1.8em;
@@ -22,6 +26,15 @@ const TestimonialContainer = styled.div`
 	grid-gap: 25px;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 50% 50%;
+	@media (max-width: 480px) {
+		grid-template-rows: auto;
+		grid-template-columns: repeat(4, 1fr);
+		width: 100vw;
+		overflow-x: scroll;
+		margin-left: -30px;
+		padding: 30px 30px 50px 30px;
+		position: static;
+	}
 `
 
 const Circle = styled.div`
@@ -35,6 +48,11 @@ const Circle = styled.div`
 	width: 20vw;
 	border-radius: 20vw;
 	background-color: ${(p) => p.theme.palette.primary};
+	@media (max-width: 480px) {
+		left: -20vw;
+		height: 40vw;
+		width: 40vw;
+	}
 `
 
 const FriendsSection = () => (
