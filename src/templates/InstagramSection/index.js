@@ -11,6 +11,9 @@ const Section = styled(PaddedContainer)`
 	& > div {
 		flex: 1;
 	}
+	@media (max-width: 480px) {
+		flex-direction: column;
+	}
 `
 
 const InstagramId = styled.a`
@@ -24,6 +27,10 @@ const InstagramId = styled.a`
 	font-weight: 500;
 	display: inline-block;
 	cursor: pointer;
+	@media (max-width: 480px) {
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
 `
 
 const InstagramSection = () => {

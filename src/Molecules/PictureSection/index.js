@@ -10,6 +10,10 @@ const Container = styled.section`
 	grid-gap: 30px;
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto;
+	@media (max-width: 480px) {
+		grid-gap: 20px;
+		grid-template-columns: auto;
+	}
 `
 
 const PicturesSection = () => {
