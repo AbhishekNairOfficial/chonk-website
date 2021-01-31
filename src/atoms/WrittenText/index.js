@@ -19,7 +19,7 @@ const WrittenTextComponent = () => {
 		<WrittenText>
 			<Typewriter
 				onInit={(typewriter) => {
-					typewriter.typeString(writtenText).pauseFor(2500).start()
+					typewriter.pauseFor(2500).typeString(writtenText).start()
 				}}
 			/>
 		</WrittenText>

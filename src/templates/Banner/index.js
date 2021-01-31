@@ -14,6 +14,7 @@ const Container = styled(PaddedContainer)`
 	justify-content: space-between;
 	flex-direction: column;
 	@media (max-width: 480px) {
+		height: calc(100vh - calc(100vh - 100%))
 		padding-top: 50px;
 	}
 `
