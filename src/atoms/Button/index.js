@@ -15,14 +15,17 @@ const StyledButton = styled.button`
 	text-align: center;
 	color: ${(p) => p.theme.palette.white};
 	text-transform: uppercase;
+	cursor: pointer;
+	opacity: ${(p) => p.loading && 0.3};
+	pointer-events: ${(p) => p.loading && 'none'};
 `
 
 const Button = (props) => {
-	const { onClick, text } = props
+	const { onClick, text, loading } = props
 
 	return (
-		<StyledButton onClick={onClick} type='button' {...props}>
-			{text}
+		<StyledButton loading={loading} onClick={onClick} type='button' {...props}>
+			{loading ? '...' : text}
 		</StyledButton>
 	)
 }

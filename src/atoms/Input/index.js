@@ -1,4 +1,4 @@
-import { forwardRef, useState } from 'react'
+import { forwardRef, useImperativeHandle, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 const commonStyles = css`
@@ -28,13 +28,24 @@ const TextArea = styled.textarea`
 `
 
 const Input = (props, ref) => {
+	const { multiline } = props
+
 	const [value, setValue] = useState('')
 
 	const onChange = (e) => {
 		setValue(e.target.value)
 	}
 
-	return props.multiline ? (
+	useImperativeHandle(ref, () => ({
+		clear: () => {
+			setValue('')
+		},
+		value: () => {
+			return value
+		},
+	}))
+
+	return multiline ? (
 		<TextArea ref={ref} value={value} onChange={onChange} {...props} rows={4} />
 	) : (
 		<StyledInput ref={ref} value={value} onChange={onChange} {...props} />

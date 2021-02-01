@@ -1,10 +1,23 @@
 import { useRef, useState } from 'react'
 import styled from 'styled-components'
+import firebase from 'firebase/app'
+import 'firebase/database'
 import Button from '../../atoms/Button'
 import Input from '../../atoms/Input'
 import SectionTitle from '../../atoms/SectionTitle'
 import { dmTitle } from '../../content/index.json'
 import { MOBILE_WIDTH } from '../../constants'
+
+if (!firebase.apps.length) {
+	if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+		// dev code
+		const firebaseConfig = require('../../firebaseConfig.json')
+		firebase.initializeApp(firebaseConfig)
+	} else {
+		// production code
+		firebase.initializeApp()
+	}
+}
 
 const Container = styled.div`
 	background-color: ${(p) => p.theme.palette.secondary};
@@ -38,14 +51,34 @@ const SlideIntoDm = () => {
 	const nameRef = useRef('')
 	const bodyRef = useRef('')
 	const [title, setTitle] = useState(dmTitle)
+	const [buttonLoading, setLoading] = useState(false)
 
-	const onSubmit = (e) => {
-		// const name = nameRef.current.value
-		// const body = bodyRef.current.value
-		setTitle('Thank you so much :)')
+	const titleChange = (message) => {
+		setTitle(message)
 		setTimeout(() => {
 			setTitle(dmTitle)
-		}, 10 * 1000)
+		}, 5 * 1000)
+	}
+
+	const onSubmit = async () => {
+		const name = nameRef.current.value()
+		const body = bodyRef.current.value()
+		if (!name || !body) {
+			titleChange('Please enter something :(')
+			return
+		}
+		setLoading(true)
+
+		var postListRef = firebase.database().ref('messages')
+		const newPostRef = postListRef.push()
+		await newPostRef.set({
+			name: name,
+			body: body,
+		})
+		setLoading(false)
+		nameRef.current.clear()
+		bodyRef.current.clear()
+		titleChange('Thank you so much :)')
 	}
 
 	return (
@@ -53,7 +86,7 @@ const SlideIntoDm = () => {
 			<SectionTitle>{title}</SectionTitle>
 			<Input placeholder={'Name'} ref={nameRef} />
 			<Input multiline placeholder={'Tell me everything'} ref={bodyRef} />
-			<Button text='Whooosh' onClick={onSubmit} />
+			<Button loading={buttonLoading} text='Whooosh' onClick={onSubmit} />
 		</Container>
 	)
 }
