@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Image from '../../atoms/Image'
 
+import { MOBILE_WIDTH } from '../../constants'
 import { instagramUrl } from '../../content/index.json'
 
 const Container = styled.section`
@@ -10,7 +11,7 @@ const Container = styled.section`
 	grid-gap: 30px;
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		grid-gap: 20px;
 		grid-template-columns: auto;
 	}

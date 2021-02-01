@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import PaddedContainer from '../../atoms/PaddedContainer'
 import { footerText } from '../../content/index.json'
+import { MOBILE_WIDTH } from '../../constants'
 
 const Container = styled.footer`
 	background-color: ${(p) => p.theme.palette.primary};
@@ -13,7 +14,7 @@ const Text = styled.a`
 	text-align: right;
 	display: block;
 	text-decoration: none;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		text-align: center;
 	}
 `

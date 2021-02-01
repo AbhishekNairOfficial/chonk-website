@@ -3,6 +3,7 @@ import PaddedContainer from '../../atoms/PaddedContainer'
 import SubtitleText from '../../atoms/SubTitleText'
 import WrittenTextComponent from '../../atoms/WrittenText'
 import { title } from '../../content/index.json'
+import { MOBILE_WIDTH } from '../../constants'
 import SCROLL_IMAGE from '../../images/scroll-logo.png'
 
 const Container = styled(PaddedContainer)`
@@ -13,7 +14,7 @@ const Container = styled(PaddedContainer)`
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		height: calc(100vh - calc(100vh - 100%))
 		padding-top: 50px;
 	}
@@ -26,7 +27,7 @@ const TitleText = styled.h1`
 	line-height: 1.33;
 	margin: 0;
 	text-align: left;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		font-size: 3.5em;
 		/* To prevent full name in one line */
 		max-width: 80vw;

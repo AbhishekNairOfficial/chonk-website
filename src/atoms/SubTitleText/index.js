@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import { subtitle } from '../../content/index.json'
+import { MOBILE_WIDTH } from '../../constants'
 
 const Text = styled.h2`
 	font-family: ${(p) => p.theme.fonts.secondary};
@@ -10,7 +11,7 @@ const Text = styled.h2`
 	color: ${(p) => p.theme.palette.black};
 	margin: 0;
 	display: inline;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		font-size: 1.2em;
 	}
 `
@@ -30,7 +31,7 @@ const Circle = styled.div`
 	right: 0;
 	top: -2em;
 	z-index: -1;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		height: 4em;
 		width: 4em;
 		top: -1.5em;

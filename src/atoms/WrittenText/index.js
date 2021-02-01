@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Typewriter from 'typewriter-effect'
 
 import { writtenText } from '../../content/index.json'
+import { MOBILE_WIDTH } from '../../constants'
 
 const WrittenText = styled.div`
 	font-size: 4em;
@@ -9,7 +10,7 @@ const WrittenText = styled.div`
 	color: ${(p) => p.theme.palette.black};
 	text-align: left;
 	white-space: pre-wrap;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		font-size: 2.5em;
 	}
 `

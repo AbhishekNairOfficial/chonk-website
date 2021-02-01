@@ -3,6 +3,7 @@ import SectionTitle from '../../atoms/SectionTitle'
 import PaddedContainer from '../../atoms/PaddedContainer'
 import { instagramTitle, instagramId } from '../../content/index.json'
 import PicturesSection from '../../Molecules/PictureSection'
+import { MOBILE_WIDTH } from '../../constants'
 
 const Section = styled(PaddedContainer)`
 	display: flex;
@@ -11,7 +12,7 @@ const Section = styled(PaddedContainer)`
 	& > div {
 		flex: 1;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		flex-direction: column;
 	}
 `
@@ -27,7 +28,7 @@ const InstagramId = styled.a`
 	font-weight: 500;
 	display: inline-block;
 	cursor: pointer;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		margin-top: 20px;
 		margin-bottom: 30px;
 	}

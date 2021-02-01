@@ -4,6 +4,7 @@ import Button from '../../atoms/Button'
 import Input from '../../atoms/Input'
 import SectionTitle from '../../atoms/SectionTitle'
 import { dmTitle } from '../../content/index.json'
+import { MOBILE_WIDTH } from '../../constants'
 
 const Container = styled.div`
 	background-color: ${(p) => p.theme.palette.secondary};
@@ -20,7 +21,7 @@ const Container = styled.div`
 		margin: 15px 0;
 		margin-right: 50px;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		width: 100vw;
 		margin-left: -30px;
 		padding-left: 30px;

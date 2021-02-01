@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import { friendsTitle, testimonials } from '../../content/index.json'
 import Testmonial from '../../Molecules/Testimonial'
+import { MOBILE_WIDTH } from '../../constants'
 
 const Container = styled.div`
 	flex: 2;
 	padding: 50px 0 0 50px;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		padding: 0;
 		position: relative;
 	}
@@ -26,7 +27,7 @@ const TestimonialContainer = styled.div`
 	grid-gap: 25px;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 50% 50%;
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		grid-template-rows: auto;
 		grid-template-columns: repeat(4, 1fr);
 		width: 100vw;
@@ -48,7 +49,7 @@ const Circle = styled.div`
 	width: 20vw;
 	border-radius: 20vw;
 	background-color: ${(p) => p.theme.palette.primary};
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		left: -20vw;
 		height: 40vw;
 		width: 40vw;

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { MOBILE_WIDTH } from '../../constants'
+
 const Container = styled.article`
 	flex: 1;
 	padding: 25px;
@@ -14,7 +16,7 @@ const Container = styled.article`
 		rgba(255, 255, 255, 0.4),
 		rgba(255, 255, 255, 0.1) 70%
 	);
-	@media (max-width: 480px) {
+	@media (max-width: ${MOBILE_WIDTH}) {
 		width: 70vw;
 	}
 `
