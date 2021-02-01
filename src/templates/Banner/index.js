@@ -15,7 +15,7 @@ const Container = styled(PaddedContainer)`
 	justify-content: space-between;
 	flex-direction: column;
 	@media (max-width: ${MOBILE_WIDTH}) {
-		height: calc(100vh - calc(100vh - 100%))
+		height: ${window.innerHeight + 'px'};
 		padding-top: 50px;
 	}
 `
@@ -40,7 +40,7 @@ const ScrollImage = styled.img`
 	width: 40px;
 	align-self: center;
 	position: relative;
-	animation: mymove 1s infinite;
+	animation: mymove 0.5s infinite;
 	animation-direction: alternate;
 	@keyframes mymove {
 		from {
