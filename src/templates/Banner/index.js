@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import PaddedContainer from '../../atoms/PaddedContainer'
 import SubtitleText from '../../atoms/SubTitleText'
 import WrittenTextComponent from '../../atoms/WrittenText'
-import { title } from '../../content/index.json'
+import { title, pandaPhotoLink } from '../../content/index.json'
 import { MOBILE_WIDTH } from '../../constants'
 import SCROLL_IMAGE from '../../images/scroll-logo.png'
 
@@ -51,16 +51,32 @@ const ScrollImage = styled.img`
 		}
 	}
 `
+const LENGTH = title.length - 1 //panda :(
 
-const BannerSection = () => (
-	<Container>
-		<div>
-			<TitleText>{title}</TitleText>
-			<SubtitleText />
-		</div>
-		<WrittenTextComponent />
-		<ScrollImage src={SCROLL_IMAGE} alt='scroll' />
-	</Container>
-)
+const BannerSection = () => {
+	const onTextClick = (index) => {
+		if (index === LENGTH - 1) {
+			// Stupid way to click on the panda
+			window.open(pandaPhotoLink)
+		}
+	}
+
+	return (
+		<Container>
+			<div>
+				<TitleText>
+					{[...title].map((letter, i) => (
+						<span key={i} onClick={() => onTextClick(i)}>
+							{letter}
+						</span>
+					))}
+				</TitleText>
+				<SubtitleText />
+			</div>
+			<WrittenTextComponent />
+			<ScrollImage src={SCROLL_IMAGE} alt='scroll' />
+		</Container>
+	)
+}
 
 export default BannerSection
