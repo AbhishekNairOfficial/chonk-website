@@ -1,8 +1,10 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
-import HomePage from './pages/Home'
+// import HomePage from './pages/Home'
 import theme from './themes'
 import './App.css'
+import { lazy, Suspense } from 'react'
+import Container from './atoms/Loader'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -22,11 +24,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
+const HomePage = lazy(() => import('./pages/Home'))
+
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			<HomePage />
+			<Suspense fallback={<Container />}>
+				<HomePage />
+			</Suspense>
 		</ThemeProvider>
 	)
 }
