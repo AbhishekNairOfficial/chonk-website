@@ -12,6 +12,7 @@ const Text = styled.a`
 	color: ${(p) => p.theme.palette.white};
 	text-align: right;
 	display: block;
+	text-decoration: none;
 	@media (max-width: 480px) {
 		text-align: center;
 	}
@@ -20,7 +21,9 @@ const Text = styled.a`
 const Footer = () => (
 	<Container>
 		<PaddedContainer>
-			<Text>{footerText}</Text>
+			<Text href='https://abhisheknairofficial.com' target='_blank'>
+				{footerText}
+			</Text>
 		</PaddedContainer>
 	</Container>
 )
