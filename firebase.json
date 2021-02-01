@@ -5,7 +5,7 @@
 	"hosting": [
 		{
 			"public": "build",
-			"site": "chonk",
+			"site": "chonky-boi",
 			"ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
 			"rewrites": [
 				{
