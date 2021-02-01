@@ -31,6 +31,7 @@ const InstagramId = styled.a`
 		margin-top: 20px;
 		margin-bottom: 30px;
 	}
+	text-decoration: none;
 `
 
 const InstagramSection = () => {
@@ -38,7 +39,11 @@ const InstagramSection = () => {
 		<Section>
 			<div>
 				<SectionTitle dark>{instagramTitle}</SectionTitle>
-				<InstagramId>{instagramId}</InstagramId>
+				<InstagramId
+					href='https://www.instagram.com/ofwheelsandwords'
+					target='_blank'>
+					{instagramId}
+				</InstagramId>
 			</div>
 			<PicturesSection />
 		</Section>
