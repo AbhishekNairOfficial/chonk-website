@@ -29,6 +29,7 @@ const Content = styled.div`
 	letter-spacing: normal;
 	text-align: left;
 	color: ${(p) => p.theme.palette.white};
+	white-space: pre-wrap;
 	@media (max-width: ${MOBILE_WIDTH}) {
 		line-height: 1.5;
 		margin-top: 50px;
