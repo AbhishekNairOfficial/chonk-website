@@ -24,10 +24,18 @@ const Caption = styled.div`
 `
 
 const InstagramPost = ({ caption, image }) => {
+	const srcSetData = image
+		.map((singleResolutionData) => {
+			const { src, config_width } = singleResolutionData
+			return `${src} ${config_width}w`
+		})
+		.join()
+	console.log({ srcSetData })
+
 	return (
 		<Container>
 			<Caption>{caption}</Caption>
-			<Image src={image} alt='instagram post' />
+			<Image srcSet={srcSetData} alt='instagram post' />
 		</Container>
 	)
 }

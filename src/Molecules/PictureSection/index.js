@@ -25,9 +25,9 @@ const PicturesSection = () => {
 		listOfImages = listOfImages
 			.filter((item, i) => i < 4)
 			.map((i) => {
-				const { display_url, edge_media_to_caption } = i.node
+				const { thumbnail_resources, edge_media_to_caption } = i.node
 				return {
-					image: display_url,
+					image: thumbnail_resources,
 					caption: edge_media_to_caption.edges[0].node.text,
 				}
 			})
