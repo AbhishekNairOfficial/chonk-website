@@ -1,5 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 // import HomePage from './pages/Home'
 import theme from './themes'
 import './App.css'
@@ -25,13 +25,24 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 const HomePage = lazy(() => import('./pages/Home'))
+const Messages = lazy(() => import('./pages/MessagesFromFriends'))
 
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<Suspense fallback={<Container />}>
-				<HomePage />
+				<BrowserRouter>
+					<Switch>
+						<Route exact path='/messages'>
+							<Messages />
+						</Route>
+						<Route path='/'>
+							<HomePage />
+						</Route>
+						<Redirect to='/' />
+					</Switch>
+				</BrowserRouter>
 			</Suspense>
 		</ThemeProvider>
 	)
