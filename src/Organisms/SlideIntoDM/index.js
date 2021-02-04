@@ -15,6 +15,7 @@ if (!firebase.apps.length) {
 		firebase.initializeApp(firebaseConfig)
 	} else {
 		// production code
+		const firebaseConfig = require('../../firebaseConfig.json')
 		firebase.initializeApp()
 	}
 }
