@@ -9,15 +9,8 @@ import { dmTitle } from '../../content/index.json'
 import { MOBILE_WIDTH } from '../../constants'
 
 if (!firebase.apps.length) {
-	if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-		// dev code
-		const firebaseConfig = require('../../firebaseConfig.json')
-		firebase.initializeApp(firebaseConfig)
-	} else {
-		// production code
-		const firebaseConfig = require('../../firebaseConfig.json')
-		firebase.initializeApp()
-	}
+	const firebaseConfig = require('../../firebaseConfig.json')
+	firebase.initializeApp(firebaseConfig)
 }
 
 const Container = styled.div`
