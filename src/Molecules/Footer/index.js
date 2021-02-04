@@ -11,8 +11,7 @@ const Container = styled.footer`
 
 const Text = styled.a`
 	color: ${(p) => p.theme.palette.white};
-	text-align: center;
-	white-space: pre-wrap;
+	text-align: right;
 	display: block;
 	text-decoration: none;
 	@media (max-width: ${MOBILE_WIDTH}) {
